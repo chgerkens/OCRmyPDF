@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 ##############################################################################
 # Script aimed at OCRing a single page of a PDF file
 #
