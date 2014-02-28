@@ -158,7 +158,7 @@ curImgPixmapClean="$TMP_FLD/$page.cleaned.$ext"
 
 # extract current page as image with correct orientation and resolution
 [ $VERBOSITY -ge $LOG_DEBUG ] && echo "Page $page: Extracting image as $ext file (${dpi} dpi)"
-[ $VERBOSITY -ge $LOG_DEBUG ] && echo "executing: ! pdftoppm -f $page -l $page -r $dpi $opt "$FILE_INPUT_PDF" > "$curImgPixmap" 
+[ $VERBOSITY -ge $LOG_DEBUG ] && echo "executing: ! pdftoppm -f $page -l $page -r $dpi $opt \"$FILE_INPUT_PDF\" > \"$curImgPixmap\"" 
 ! pdftoppm -f $page -l $page -r $dpi $opt "$FILE_INPUT_PDF" > "$curImgPixmap" \
 	&& echo "Could not extract page $page as $ext from \"$FILE_INPUT_PDF\". Exiting..." && exit $EXIT_OTHER_ERROR
 
