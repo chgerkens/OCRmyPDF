@@ -202,7 +202,7 @@ fi
 
 # if requested generate special debug PDF page with visible OCR text
 if [ $PDF_NOIMG -eq "1" ] ; then
-	[ $VERBOSITY -ge $LOG_DEBUG ] && echo "Page $page: Embedding text in PDF (debug page)"
+	[ $VERBOSITY -ge $LOG_DEBUG ] && echo "Page $page: Embedding text in PDF debug page"
 	! python2 $SRC/hocrTransform.py -b -r $dpi "$curHocr" "$curOCRedPDFDebug" \
 		&& echo "Could not create PDF file from \"$curHocr\". Exiting..." && exit $EXIT_OTHER_ERROR	
 fi
