@@ -203,20 +203,6 @@ if [ $VERBOSITY -ge $LOG_DEBUG ]; then
 	echo "--------------------------------"
 fi
 
-
-
-# check if the languages passed to tesseract are all supported
-for currentlan in `echo "$LAN" | sed 's/+/ /g'`; do
-	if ! tesseract --list-langs 2>&1 | grep "^$currentlan\$" > /dev/null; then
-		echo "The language \"$currentlan\" is not supported by tesseract."
-		tesseract --list-langs 2>&1 | tr '\n' ' '; echo
-		echo "Exiting..."
-		exit $EXIT_BAD_ARGS
-	fi
-done
-
-
-
 # Initialize path to temporary files using mktemp
 # Goal: save tmp file in a sub-folder of the $TMPDIR environment variable (or in "/tmp" if unset)
 # Unfortunately, Linux mktemp is not compatible with FreeBSD/OSX mktemp
